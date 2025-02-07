@@ -1,3 +1,19 @@
+# Blog post assignment
+
+You are tasked with recreating this simple design available at this Figma: https://www.figma.com/design/Cl5KBXskzg0vvLSmOc17RG/Luans-blog?node-id=1-590&t=7OF9MIkREguFB7CP-1
+
+Someone at the team has set up a skeleton project for you to get started, and it's available here: https://github.com/Macludde/careless-interview.git
+
+There is a mocked backend available in a function called `useBlogData`, use this to fetch the data.
+
+The rest of the app is a fresh "Getting started with Expo" app.
+
+You can use any method you want, and there are no restrictions on what you are allowed or not allowed to do.
+
+We want you to think aloud while you complete the assignment.
+
+Good luck.
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
