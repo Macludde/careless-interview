@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type BlogPost = {
+export type BlogPost = {
     id: number;
     title: string;
     body: string;
@@ -12,7 +12,7 @@ type BlogPost = {
 export function toggleStarOnPost(id: number) {
     return new Promise<void>((resolve) => {
         setTimeout(() => {
-            const blogPost = data.find((post) => post.id === id);
+            const blogPost = database.find((post) => post.id === id);
             if (blogPost) {
                 blogPost.isFavourite = !blogPost.isFavourite;
             }
@@ -35,12 +35,13 @@ export default function useBlogData() {
                 // keep old data
                 setError('Failed to fetch data');
             } else {
-                data?.sort((a, b) => {
+                // mock sorting, favourites first then by id
+                const sortedData = database?.toSorted((a, b) => {
                     if (a.isFavourite && !b.isFavourite) return -1;
                     if (!a.isFavourite && b.isFavourite) return 1;
                     return a.id - b.id;
                 });
-                setData(data);
+                setData(sortedData);
                 setError(null);
             }
         }, 400);
@@ -58,7 +59,7 @@ export default function useBlogData() {
     };
 }
 
-const data: BlogPost[] = [
+const database: BlogPost[] = [
     {
         id: 1,
         title: 'Trip to Tokyo',
